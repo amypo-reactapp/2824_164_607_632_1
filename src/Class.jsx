@@ -1,19 +1,16 @@
-import React,{Component} from 'react'
-class Class extends Component{
-    constructor(props){
-        super(props);
-        this.state={count:0};
-    }
-    handleIncrement=()=>{
-        this.setState({count:this.state.count+1});
-    };
-    render(){
-        return(
-            <div>
-            <button onClick={this.handleIncrement}>increment={this.state.count}</button>
-            </div>
+import React,{useState} from 'react'
+const Class=()=>{
+        const [count, setCount] = useState(0); // Initialize count to 0
+      
+        const handleIncrement = () => {
+          setCount(count + 1); // Increment count by 1
+        };
+      
+        return (
+          <div>
+            <button onClick={handleIncrement}>Increment Counter: {count}</button>
+          </div>
         );
-    }
-}
+      };
 export default Class
 
